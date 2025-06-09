@@ -1,10 +1,13 @@
 <script>
 import NavLink from '@/components/NavLink.vue';
+import Skill from './components/Skill.vue';
 import Swal from 'sweetalert2';
 
 export default {
   components: {
-    NavLink
+    NavLink,
+    Skill,
+    
   },
   data() {
     return {
@@ -49,7 +52,7 @@ export default {
   },
   computed: {
     backgroundColor() {
-      return this.isDarkMode ? 'bg-gray-900' : 'bg-white';
+      return this.isDarkMode ? 'bg-gray-900' : 'bg-gray-100';
     },
     textColor() {
       return this.isDarkMode ? 'text-white' : 'text-black';
@@ -88,6 +91,13 @@ export default {
     },
     prevCert() {
       this.currentCert = (this.currentCert - 1 + this.certificates.length) % this.certificates.length;
+    },
+     downloadCV() {
+      const link = document.createElement('a');
+      link.href = '/Hebres - Resume.pdf';
+      link.download = 'Hebres - Resume.pdf';
+      link.click();
+      document.body.removeChild(link);
     }
   }
 }
@@ -154,7 +164,7 @@ export default {
           <NavLink @click="setActive('Skills')" :active="activeNav === 'Skills'" class="text-white w-full">
             Skills
           </NavLink>
-          <NavLink @click="setActive('Projects')" href="#Projects" :active="activeNav === 'Projects'" class="text-white w-full">
+          <NavLink @click="setActive('Projects')"  :active="activeNav === 'Projects'" class="text-white w-full">
             Projects
           </NavLink>
           <img :src="modeImg" title="light dark icons" class="w-8 h-8 mt-2 cursor-pointer" @click="toggleMode" />
@@ -164,20 +174,20 @@ export default {
 
       <section id="about" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 gap-12 md:gap-52 z-10">
         <div>
-          <h1 class="text-4xl md:text-5xl font-bold leading-snug text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold leading-snug text-center md:text-left animate__animated animate__jackInTheBox">
             Hi,<br>
             I'm <span class="text-teal-700 font-semibold">Lester</span><br>
             Aspiring Web Developer
           </h1>
           <div class="flex justify-center item-center mt-16">
             <button
-              @click="flash('Test Message')"
+              @click="setActive('contact')" :active="activeNav === 'contact'"
               class="inline-flex items-center rounded-md border border-transparent bg-gray-700 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-teal-900">
               Contact me
             </button>
           </div>
           
-          <div class="mt-16 flex justify-center items-center space-x-6">
+          <div class="mt-16 flex justify-center items-center space-x-6 animate__animated animate__slideInUp">
             <a href="https://www.linkedin.com/in/jlhebres/" target="_blank" class="w-10 h-10 flex items-center justify-center">
               <img
                 src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png"
@@ -230,6 +240,7 @@ export default {
 
                     <div class="flex justify-center mt-6">
                         <button
+                        @click="downloadCV"
                         class="inline-flex items-center rounded-md border border-transparent bg-gray-700 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-teal-900"
                         >
                         Download CV
@@ -361,50 +372,18 @@ export default {
                     <hr class="border-t-2 border-teal-700 mt-2 w-12 mx-auto"/> 
                 </div>
                 <div class="flex justify-center items-center">
-                   <ul class="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-20 sm:gap-y-4 md:gap-x-40 md:gap-y-5 list-none text-xl">
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/1051/1051277.png'" class="w-6 h-6" />
-                            HTML
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/5968/5968292.png'" class="w-6 h-6" />
-                            JavaScript
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/732/732190.png'" class="w-6 h-6" />
-                            CSS
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/919/919830.png'" class="w-6 h-6" />
-                            PHP
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/6132/6132221.png'" class="w-6 h-6" />
-                            C#
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/16845/16845837.png'" class="w-6 h-6" />
-                            MySQL
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png'"
-                                class="w-4 h-4" />
-                            Vue.js
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://download.logo.wine/logo/Laravel/Laravel-Logo.wine.png'" class="w-8 h-8">
-                            Laravel
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://cdn-icons-png.flaticon.com/128/4494/4494740.png'" class="w-4 h-4">
-                            Git
-                        </li>
-                        <li class="flex items-center gap-2 transform transition-transform duration-200 hover:scale-125">
-                            <img :src="'https://pngimg.com/d/linux_PNG27.png'" class="w-8 h-8">
-                            Linux
-                        </li>
-                    </ul>
-
+                  <ul class="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-20 sm:gap-y-4 md:gap-x-40 md:gap-y-5 list-none text-xl">
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/1051/1051277.png'">HTML</Skill></li>
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/5968/5968292.png'">JavaScript</Skill></li>
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/732/732190.png'">CSS</Skill></li>
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/919/919830.png'">PHP</Skill></li>
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/6132/6132221.png'">C#</Skill></li>
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/16845/16845837.png'">MySQL</Skill></li>
+                    <li><Skill :icon="'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png'">Vue.js</Skill></li>
+                    <li><Skill :icon="'https://download.logo.wine/logo/Laravel/Laravel-Logo.wine.png'">Laravel</Skill></li>
+                    <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/4494/4494740.png'">Git</Skill></li>
+                    <li><Skill :icon="'https://pngimg.com/d/linux_PNG27.png'">Linux</Skill></li>
+                  </ul>
                 </div>
             </section>
             
