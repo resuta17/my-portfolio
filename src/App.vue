@@ -1,12 +1,13 @@
 <script>
 import NavLink from '@/components/NavLink.vue';
 import Skill from './components/Skill.vue';
-import Swal from 'sweetalert2';
+import SocialLink from './components/SocialLink.vue';
 
 export default {
   components: {
     NavLink,
     Skill,
+    SocialLink,
     
   },
   data() {
@@ -83,9 +84,6 @@ export default {
     toggleMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
     },
-    flash(message) {
-      Swal.fire("Success!", message, 'success');
-    },
     nextCert() {
       this.currentCert = (this.currentCert + 1) % this.certificates.length;
     },
@@ -105,7 +103,6 @@ export default {
 
 <template>
   <div :class="[backgroundColor, textColor]" class="min-h-screen overflow-x-hidden">
-    <!-- Header -->
     <header class="bg-teal-900 shadow h-16 flex justify-between items-center px-4 sticky top-0 z-50">
       <div class="ml-2 md:ml-8 flex items-center space-x-2">
         <div>
@@ -186,31 +183,11 @@ export default {
               Contact me
             </button>
           </div>
-          
+               
           <div class="mt-16 flex justify-center items-center space-x-6 animate__animated animate__slideInUp">
-            <a href="https://www.linkedin.com/in/jlhebres/" target="_blank" class="w-10 h-10 flex items-center justify-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png"
-                alt="LinkedIn"
-                class="w-8 h-8 transform transition-transform duration-200 hover:scale-125"
-              />
-            </a>
-
-            <a href="https://www.facebook.com/jl.hebres1" target="_blank" class="w-10 h-10 flex items-center justify-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png"
-                alt="Facebook"
-                class="w-8 h-8 transform transition-transform duration-200 hover:scale-125"
-              />
-            </a>
-
-            <a href="https://github.com/resuta17" target="_blank" class="w-10 h-10 flex items-center justify-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/5968/5968896.png"
-                alt="GitHub"
-                class="w-8 h-8 transform transition-transform duration-200 hover:scale-125"
-              />
-            </a>
+            <SocialLink src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png" alt="LinkedIn" link="https://www.linkedin.com/in/jlhebres/"></SocialLink>
+            <SocialLink src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" link="https://www.facebook.com/jl.hebres1"></SocialLink>
+            <SocialLink src="https://cdn-icons-png.flaticon.com/128/5968/5968896.png" alt="GitHub" link="https://github.com/resuta17"></SocialLink>
           </div>
         </div>
       </section>
@@ -319,7 +296,7 @@ export default {
             </section>
             
             <section id="certification" class="mt-36">
-              <div class="text-center text-xl font-semibold mb-20" :class="textColor">
+              <div class="text-center text-xl font-semibold mb-16 text-teal-700">
                 <p>Certificates</p>
                 <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
               </div>
@@ -424,38 +401,13 @@ export default {
                     </div>
                 
                 </div> 
-                    <div class="mt-5 flex justify-center items-center space-x-6 animate__animated animate__slideInUp">
-                        <a href="https://www.linkedin.com/in/jlhebres/" target="_blank" class="w-10 h-10 flex items-center justify-center">
-                            <img
-                            :src="'https://cdn-icons-png.flaticon.com/128/4494/4494497.png'"
-                            alt="LinkedIn"
-                            class="w-8 h-8 transform transition-transform duration-200 hover:scale-125"
-                            />
-                        </a>
-
-                        <a href="https://www.facebook.com/jl.hebres1" target="_blank" class="w-10 h-10 flex items-center justify-center">
-                            <img
-                            :src="'https://cdn-icons-png.flaticon.com/128/5968/5968764.png'"
-                            alt="Facebook"
-                            class="w-8 h-8 transform transition-transform duration-200 hover:scale-125"
-                            />
-                        </a>
-
-                        <a href="https://github.com/resuta17" target="_blank" class="w-10 h-10 flex items-center justify-center">
-                            <img
-                            :src="'https://cdn-icons-png.flaticon.com/128/5968/5968896.png'"
-                            alt="GitHub"
-                            class="w-8 h-8 transform transition-transform duration-200 hover:scale-125"
-                            />
-                        </a>
-                    </div>
-                
-            </section>
-
-     
-
-          
-  </div>
+                <div class="mt-16 flex justify-center items-center space-x-6 animate__animated animate__slideInUp">
+                  <SocialLink src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png" alt="LinkedIn" link="https://www.linkedin.com/in/jlhebres/"></SocialLink>
+                  <SocialLink src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" link="https://www.facebook.com/jl.hebres1"></SocialLink>
+                  <SocialLink src="https://cdn-icons-png.flaticon.com/128/5968/5968896.png" alt="GitHub" link="https://github.com/resuta17"></SocialLink>
+                </div>
+            </section>      
+      </div>
 </template>
 
 <style>
