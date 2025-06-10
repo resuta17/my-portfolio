@@ -1,8 +1,5 @@
 <template>
-    <div class="text-center text-xl font-semibold mb-16 text-teal-700">
-        <p>Certificates</p>
-        <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
-      </div>
+    
       <div class="flex justify-center items-center space-x-4">
         <button
           @click="prevCert"

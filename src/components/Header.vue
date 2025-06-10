@@ -69,7 +69,7 @@ export default {
         :key="section.id"
         @click="setActive(section.id)"
         :active="activeNav === section.id"
-        class="text-white"
+        class="text-white cursor-pointer"
       >
         {{ section.name }}
       </NavLink>
