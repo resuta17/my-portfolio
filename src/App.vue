@@ -88,7 +88,7 @@ export default {
         <div class="flex justify-center item-center mt-16">
           <button
             @click="setActive('contact')" :active="activeNav === 'contact'"
-            class="inline-flex items-center rounded-md border border-transparent bg-gray-700 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-teal-900">
+            class="inline-flex items-center rounded-md border border-transparent bg-gray-700 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-teal-900 cursor-pointer">
             Contact me
           </button>
         </div>
