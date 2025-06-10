@@ -8,6 +8,7 @@ import ContactMe from '@/components/ContactMe.vue';
 import Education from '@/components/Education.vue';
 import educations from '@/data/education.json'
 import AboutMe from '@/components/AboutMe.vue';
+import ScrollFadeIn from '@/components/ScrollFadeIn.vue';
 
 
 export default {
@@ -19,6 +20,7 @@ export default {
     ContactMe,
     Education,
     AboutMe,
+    ScrollFadeIn,
   },
   data() {
     return {
@@ -102,14 +104,19 @@ export default {
     </section>
     
     <section id="about" class="mt-10 px-4">
-      <AboutMe/>
+      <ScrollFadeIn>
+        <AboutMe/>
+      </ScrollFadeIn>
+      
     </section>
     
     <section id="experience" class="mt-36 m-5">
+     
       <div class="text-center text-xl font-semibold mb-16 text-teal-700">
         <p>Experience</p>
         <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
       </div>
+       <ScrollFadeIn>
       <div class="flex justify-center">
         <div
           class="flex items-start space-x-4 max-w-4xl w-full px-4 border border-teal-700 rounded-xl p-6 shadow-lg">
@@ -130,6 +137,7 @@ export default {
           </div>
         </div>
       </div>
+      </ScrollFadeIn>
     </section>
     
     <section id="education" class="mt-36 m-5">
@@ -137,20 +145,31 @@ export default {
         <p>Education</p>
         <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
       </div>
-      <Education v-for="education in educations"
-        :image = "education.image"
-        :title = "education.title" 
-        :schoolLink = "education.schoolLink"
-        :degree ="education.degree"
-        :schoolYear = "education.schoolYear"
-      > 
-        {{ education.description }}
-      </Education>
+      <ScrollFadeIn>
+          <Education v-for="education in educations"
+          :image = "education.image"
+          :title = "education.title" 
+          :schoolLink = "education.schoolLink"
+          :degree ="education.degree"
+          :schoolYear = "education.schoolYear"
+        > 
+          {{ education.description }}
+        </Education>
+      </ScrollFadeIn>
+      
       
     </section>
     
     <section id="certification" class="mt-36">
-        <Certificates v-bind:darkMode = "isDarkMode"></Certificates>
+      
+        <div class="text-center text-xl font-semibold mb-16 text-teal-700">
+            <p>Certificates</p>
+            <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
+        </div>
+        <ScrollFadeIn>
+            <Certificates v-bind:darkMode = "isDarkMode"></Certificates>
+        </ScrollFadeIn>
+        
     </section>
     
 
@@ -160,7 +179,8 @@ export default {
         <hr class="border-t-2 border-teal-700 mt-2 w-12 mx-auto"/> 
       </div>
       <div class="flex justify-center items-center">
-        <ul class="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-20 sm:gap-y-4 md:gap-x-40 md:gap-y-5 list-none text-xl">
+        <ScrollFadeIn>
+          <ul class="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-20 sm:gap-y-4 md:gap-x-40 md:gap-y-5 list-none text-xl">
           <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/1051/1051277.png'">HTML</Skill></li>
           <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/5968/5968292.png'">JavaScript</Skill></li>
           <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/732/732190.png'">CSS</Skill></li>
@@ -172,6 +192,7 @@ export default {
           <li><Skill :icon="'https://cdn-icons-png.flaticon.com/128/4494/4494740.png'">Git</Skill></li>
           <li><Skill :icon="'https://pngimg.com/d/linux_PNG27.png'">Linux</Skill></li>
         </ul>
+        </ScrollFadeIn>   
       </div>
     </section>
     
