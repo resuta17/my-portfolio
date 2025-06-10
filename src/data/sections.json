@@ -1,0 +1,26 @@
+[
+    {
+        "id": "about",
+        "name": "About me"
+    },
+    {
+        "id": "experience",
+        "name": "Experience"
+    },
+    {
+        "id": "education",
+        "name": "Education"
+    },
+    {
+        "id": "certification",
+        "name": "Certification"
+    },
+    {
+        "id": "Skills",
+        "name": "Skills"
+    },
+    {
+        "id": "Projects",
+        "name": "Projects"
+    }
+]

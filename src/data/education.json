@@ -1,0 +1,20 @@
+[
+    {
+        "id": "college",
+        "image": "https://www.ccdisorsogon.edu.ph/wp-content/uploads/2018/04/cropped-ccdilogo.png",
+        "title": "CCDI Sorsogon",
+        "schoolLink": "https://www.ccdisorsogon.edu.ph/",
+        "degree": "Bachelor of Science in Computer Science",
+        "schoolYear": "2021 - 2025",
+        "description": "Computer Communication Development Institute - Sorsogon City"
+    },
+    {
+        "id": "shs",
+        "image": "https://www.ccdisorsogon.edu.ph/wp-content/uploads/2018/04/cropped-ccdilogo.png",
+        "title": "CCDI Sorsogon",
+        "schoolLink": "https://www.ccdisorsogon.edu.ph/",
+        "degree": "TVL - ICT Programming NC IV",
+        "schoolYear": "2019 - 2021",
+        "description": "Computer Communication Development Institute SHS - Sorsogon City"
+    }
+]
