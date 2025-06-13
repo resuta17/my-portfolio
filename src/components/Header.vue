@@ -44,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <header class="bg-teal-900 shadow h-16 flex justify-between items-center px-4 sticky top-0 z-50">
+  <header class="bg-teal-900 shadow h-16 flex justify-between items-center px-4 sticky top-0 z-50 shadow">
     <div class="ml-2 md:ml-8 flex items-center space-x-2">
       <div>
         <h1 class="text-white font-bold text-base md:text-lg">

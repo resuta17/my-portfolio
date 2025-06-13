@@ -69,16 +69,17 @@ export default {
 </script>
 
 <template>
-  <div :class="[backgroundColor, textColor]" class="min-h-screen overflow-x-hidden">
-    <Header
-      :active-nav="activeNav"
-      :is-dark-mode="isDarkMode"
-      :is-mobile-menu-open="isMobileMenuOpen"
-      :mode-img="modeImg"
-      @set-active="setActive"
-      @toggle-mode="toggleMode"
-      @toggle-menu="toggleMenu"
-    />
+  <div :class="[backgroundColor, textColor]" class="min-h-screen">
+      <Header
+        :active-nav="activeNav"
+        :is-dark-mode="isDarkMode"
+        :is-mobile-menu-open="isMobileMenuOpen"
+        :mode-img="modeImg"
+        @set-active="setActive"
+        @toggle-mode="toggleMode"
+        @toggle-menu="toggleMenu"
+      /> 
+    
 
     <section class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 gap-12 md:gap-52 z-10">
       <div>
@@ -104,6 +105,10 @@ export default {
     </section>
     
     <section id="about" class="mt-10 px-4">
+      <div class="text-center text-xl font-semibold mb-10 text-teal-700">
+        <p>About me</p>
+        <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
+      </div>
       <ScrollFadeIn>
         <AboutMe/>
       </ScrollFadeIn>
