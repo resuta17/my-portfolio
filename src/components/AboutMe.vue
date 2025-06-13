@@ -1,8 +1,4 @@
 <template>
-    <div class="text-center text-xl font-semibold mb-10 text-teal-700">
-        <p>About me</p>
-        <hr class="border-t-2 border-teal-700 mt-2 w-24 mx-auto" />
-      </div>
 
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12">
         <div class="flex-shrink-0">
