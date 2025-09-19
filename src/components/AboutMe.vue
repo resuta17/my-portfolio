@@ -3,7 +3,7 @@
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12">
         <div class="flex-shrink-0">
           <img
-            :src="`https://media.licdn.com/dms/image/v2/D5603AQFGn1dlumaH5A/profile-displayphoto-shrink_400_400/B56ZbicFj_H4Ao-/0/1747555736915?e=1755129600&v=beta&t=Rxgns4gM_TSoDxiic5zoDep5CCQPuQqy86ntOKRmiyM`"
+            :src="`https://media.licdn.com/dms/image/v2/D5603AQFGn1dlumaH5A/profile-displayphoto-shrink_800_800/B56ZbicFj_H4Ak-/0/1747555736915?e=1761177600&v=beta&t=1ENePByFj8B_jGghujcgmycIh_mBFZ9N459kIRcGWqY`"
             alt="Profile Picture"
             class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover rounded-full mx-auto md:mx-0"
           />

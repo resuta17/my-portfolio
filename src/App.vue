@@ -126,7 +126,7 @@ export default {
         <div
           class="flex items-start space-x-4 max-w-4xl w-full px-4 border border-teal-700 rounded-xl p-6 shadow-lg">
           <div class="w-20 flex justify-center">
-            <img :src="'https://media.licdn.com/dms/image/v2/D560BAQEeJkkTZrZb8A/company-logo_200_200/company-logo_200_200/0/1704273708397?e=1753315200&v=beta&t=QzK7HH73jp-GElxDH6VSiASxXIZrbI1InnQwIktOUR4'"
+            <img :src="'https://media.licdn.com/dms/image/v2/D560BAQEeJkkTZrZb8A/company-logo_100_100/company-logo_100_100/0/1704273708397?e=1761177600&v=beta&t=ZfzdTs2J_FWp9rVQQgFIyjnxRucbgXaAEFTRuFLO01w'"
               title="phCollab Logo" class="w-16 h-16 flex-shrink-0">
           </div>
 
